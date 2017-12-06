@@ -1,0 +1,56 @@
+import React,{ Component } from 'react';
+import Filter from './Filter';
+import TreeView from './TreeView';
+import {getTreeData} from '../actions/getTree'
+import {connect} from 'react-redux';
+
+class InsBox extends Component{
+	constructor(props){
+		super(props);
+		this.state = {
+			query:'',
+            filterData: this.props.TreeResp? this.props.TreeResp.treeResp : ""
+		}
+	}
+	getData(queryText, data, queryResult){
+		data.map((dataNode, i)=> {
+			if(dataNode.node.description.indexOf(queryText)!=-1){
+				queryResult.push(dataNode);
+				return;
+			}
+			if(dataNode.node.children){
+				this.getData(queryText, dataNode.node.children, queryResult);
+			}
+		})
+	}
+	doSearch(queryText, data){
+		var queryResult = [];
+		this.getData(queryText, data, queryResult)
+		this.setState({
+			query: queryText,
+			filterData: queryResult
+		})
+	}
+	render(){
+		return(	
+			<div>
+				<Filter onClick={this.props.onClick} query={this.state.query} doSearch= {(e)=>this.doSearch(e,this.props.TreeResp.treeResp)} />
+				{this.state.filterData ? <TreeView data={this.state.filterData} />: " "}
+			</div>
+		)
+	}
+}
+
+function mapStateToProps(state){
+	return {
+		TreeResp: state.treeResp
+	}
+}	
+function mapDispatchToProps(dispatch){
+	return{
+		onClick: ()=>{
+			dispatch(getTreeData())
+		}
+	}
+}
+export default connect(mapStateToProps,mapDispatchToProps)(InsBox)
