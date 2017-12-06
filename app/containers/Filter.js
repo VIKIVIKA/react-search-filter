@@ -9,10 +9,6 @@ export default class Filter extends Component{
 			inputValue: ''
 		};
 	}
-	doSearch(e){
-		var query = this.state.inputValue;
-		this.props.doSearch(query);
-	}
 	inpVal(e){
 		this.setState({inputValue: e.target.value})
 	}
