@@ -1,5 +1,8 @@
 import React,{Component} from 'react';
-import TreeView from '../components/TreeView'
+import TreeView from '../components/TreeView';
+import {connect} from 'react-redux';
+import {getTreeData} from '../actions/getTree';
+
 class Filter extends Component{
 	constructor(props){
 		super(props);
@@ -20,9 +23,19 @@ class Filter extends Component{
 			<div>
 				<input onChange={(e)=>{this.inpVal(e)}} type="text" value={this.state.inputValue} ref="searchArg"/>
 				<button onClick={(e)=>{this.doSearch(e)}}>Search</button>
+				<button onClick={(e)=>this.props.getTreeData(e, this.refs.searchArg.value)}>abc</button>				
+				{
+					JSON.stringify(this.props)
+				}
 			</div>
 		)
 	}
 }
 
-export default Filter
+function mapStateToProps(state){
+	return {
+		TreeResp: state.treeResp
+	}
+}
+
+export default connect(mapStateToProps, {getTreeData})(Filter)

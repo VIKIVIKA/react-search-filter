@@ -1,14 +1,15 @@
 import axios from 'axios';
 import {UpdateJson} from '../../libs/UpdateJson';
+const GET_INITIALDATA = "GET_INITIALDATA";
 
-const GET_TREEDATA = "GET_TREEDATA";
-export function getTreeData(queryText){
+export function getInitialTreeData(){
 	return (dispatch) => {
-		var request = axios.get('/app/data/data.json');
+		const request = axios.get('/app/data/data.json');
 		request.then(({data})=>{
-						dispatch({type:GET_TREEDATA,payload:UpdateJson(data)});
+						dispatch({type:GET_INITIALDATA,payload: data});
 					}).catch(function (error) {
 						console.log(error);
 					})
 	}
 }
+

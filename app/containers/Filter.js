@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
-import TreeView from '../components/TreeView'
-class Filter extends Component{
+import TreeView from '../components/TreeView';
+
+export default class Filter extends Component{
 	constructor(props){
 		super(props);
 		this.state = {
@@ -19,10 +20,8 @@ class Filter extends Component{
 		return(
 			<div>
 				<input onChange={(e)=>{this.inpVal(e)}} type="text" value={this.state.inputValue} ref="searchArg"/>
-				<button onClick={(e)=>{this.doSearch(e)}}>Search</button>
+				<button onClick={(e)=>this.props.getTreeData(e, this.refs.searchArg.value)}>abc</button>				
 			</div>
 		)
 	}
 }
-
-export default Filter

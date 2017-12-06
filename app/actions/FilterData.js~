@@ -2,7 +2,7 @@ import axios from 'axios';
 import {UpdateJson} from '../../libs/UpdateJson';
 const GET_INITIALDATA = "GET_INITIALDATA";
 
-export function getInitialTreeData(){
+export function getTreeData(e, inpValue){
 	return (dispatch) => {
 		const request = axios.get('/app/data/data.json');
 		request.then(({data})=>{
@@ -12,4 +12,3 @@ export function getInitialTreeData(){
 					})
 	}
 }
-

@@ -1,40 +1,44 @@
 import React,{ Component } from 'react';
 import Filter from './Filter';
 import TreeView from '../components/TreeView';
+import {connect} from 'react-redux';
+import {getTreeData} from '../actions/filterTreeData';
+import {getInitialTreeData} from '../actions/getTree';
 
-export default class InsBox extends Component{
+class InsBox extends Component{
 	constructor(props){
 		super(props);
 		this.state = {
 			query:'',
-            filterData: this.props.data
+            filterData: []
 		}
 	}
-	getData(queryText, data, queryResult){
-		data.map((dataNode, i)=> {
-			if(dataNode.node.description.indexOf(queryText)!=-1){
-				queryResult.push(dataNode);
-				return;
-			}
-			if(dataNode.node.children){
-				this.getData(queryText, dataNode.node.children, queryResult);
-			}
-		})
+
+	componentDidMount(){
+		this.props.getInitialTreeData();
 	}
-	doSearch(queryText, data){
-		var queryResult = [];
-		this.getData(queryText, data, queryResult)
-		this.setState({
-			query: queryText,
-			filterData: queryResult
-		})
+
+	componentWillReceiveProps(nextProps){
+		if(nextProps){
+			this.setState({filterData: nextProps.TreeResp.treeResp})
+		}
 	}
+
 	render(){
 		return(	
 			<div>
-				<Filter query={this.state.query} doSearch= {(e)=>this.doSearch(e,this.props.data)} />
+				<Filter getTreeData= {(e,val)=>this.props.getTreeData(e,val)} />
 				<TreeView data={this.state.filterData} />
 			</div>
 		)
 	}
 }
+
+
+function mapStateToProps(state){
+	return {
+		TreeResp: state.treeResp
+	}
+}
+
+export default connect(mapStateToProps, {getTreeData,getInitialTreeData})(InsBox)
