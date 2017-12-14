@@ -16,7 +16,7 @@ Sample Tree
         </ul>
     </li>
  </ul>
-
+<img src="./img/2017-12-14-20-17-localhost-8080.png"/>
 
 Execution
 ================ 
@@ -44,6 +44,7 @@ Output:
             </ul>
         </li>
     </ul>
+<img src="./img/2017-12-14-20-17-localhost-8080.png"/>
 
 Example
 Search criteria2
@@ -57,7 +58,7 @@ Output:
         <li>test1.1</li>
         <li>test1.2</li>
     </ul>
-
+<img src="./img/2017-12-14-20-17-localhost-8080-1.png"/>
 
 
 <b>Installation procedure.</b>
