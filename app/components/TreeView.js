@@ -8,7 +8,7 @@ export default class TreeView extends Component{
 		let appendChild = (childNode) =>{
 			return childNode.map((chldNode,i) => {
 				return(
-						<div key={i}>
+						<div key={i}  className="marAut600">
 						{
 							chldNode.node.children ?
 								<ul key={chldNode.node.id}>
@@ -24,7 +24,7 @@ export default class TreeView extends Component{
 				)})
 		}
 		return(
-			<div>
+			<div className="marT25">
 				{appendChild(this.props.data)}
 			</div>
 		)

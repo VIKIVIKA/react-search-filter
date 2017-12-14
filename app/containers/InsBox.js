@@ -12,8 +12,8 @@ class InsBox extends Component{
 			query:'',
             filterData: []
 		}
-	}
-
+	}	
+	
 	componentDidMount(){
 		this.props.getInitialTreeData();
 	}
@@ -26,7 +26,7 @@ class InsBox extends Component{
 
 	render(){
 		return(	
-			<div>
+			<div className="mainCont">
 				<Filter getTreeData= {(e,val)=>this.props.getTreeData(e,val)} />
 				<TreeView data={this.state.filterData} />
 			</div>

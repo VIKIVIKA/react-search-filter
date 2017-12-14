@@ -14,9 +14,12 @@ export default class Filter extends Component{
 	}
 	render(){
 		return(
-			<div>
-				<input onChange={(e)=>{this.inpVal(e)}} type="text" value={this.state.inputValue} ref="searchArg"/>
-				<button onClick={(e)=>this.props.getTreeData(e, this.refs.searchArg.value)}>Filter</button>				
+			<div className="text-center">
+				<label>
+					<h1>Redux Search tree</h1>
+				<input className="myCustInpt" onChange={(e)=>{this.inpVal(e)}} type="text" value={this.state.inputValue} ref="searchArg"/>
+				<button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onClick={(e)=>this.props.getTreeData(e, this.refs.searchArg.value)}>Filter</button>	
+				</label>			
 			</div>
 		)
 	}
