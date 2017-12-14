@@ -13,7 +13,9 @@ Sample Tree
     <li><ul>test2.2
         <li>test2.2.1</li>
         <li>test2.2.2</li>
-        </ul></li>
+        </ul>
+    </li>
+ </ul>
 
 
 Execution
