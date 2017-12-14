@@ -5,22 +5,23 @@
 Sample Tree
 ================
 <ul>test1
-    test1.1
-    test1.2</ul>
-test2
-    test2.1
-    test2.2
-        test2.2.1
-        test2.2.2
-
+    <li>test1.1</li>
+    <li>test1.2</li>
+</ul>
+<ul>test2
+    <li>test2.1</li>
+    <li><ul>test2.2
+        <li>test2.2.1</li>
+        <li>test2.2.2</li>
+        </ul></li>
 
 
 Execution
 ================ 
 
-Example1
-Search criteria - 1 
-==================================
+Example
+Search criteria 
+===============
 Input:
     enter "test" in text box and click on search 
     or
@@ -28,32 +29,17 @@ Input:
 
 Output:
     It will display all like below (because in output test keyword is present every where)
-    test1
-        test1.1
-        test1.2
-    test2
-        test2.1
-        test2.2
-            test2.2.1
-            test2.2.2
-
-
-Example 2
-Search criteria - 2
-==================================
-Input:
-    enter "test2" in text box and click on search 
-    or
-    enter "test2*" in text box and click on search 
-    
-Output:
-It will display all like below (because in output test2 keyword is present every where)
-    test2
-        test2.1
-        test2.2
-            test2.2.1
-            test2.2.2
- 
+    <ul>test1
+        <li>test1.1</li>
+        <li>test1.2</li>
+    <ul>
+    <ul>test2
+        <li>test2.1</li>
+        <li><ul>test2.2
+            <li>test2.2.1</li>
+            <li>test2.2.2</li>
+            </ul></li>
+        </ul>
 
 
 
