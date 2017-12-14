@@ -4,9 +4,9 @@
 
 Sample Tree
 ================
-test1
+<ul>test1
     test1.1
-    test1.2
+    test1.2</ul>
 test2
     test2.1
     test2.2
