@@ -45,6 +45,18 @@ Output:
         </li>
     </ul>
 
+Example
+Search criteria2
+===============
+Input:
+    enter "test1" in text box and click on search 
+
+Output:
+    It will display all like below (because in output test keyword is present every where)
+    <ul>test1
+        <li>test1.1</li>
+        <li>test1.2</li>
+    </ul>
 
 
 
