@@ -34,14 +34,16 @@ Output:
     <ul>test1
         <li>test1.1</li>
         <li>test1.2</li>
-    <ul>
+    </ul>
     <ul>test2
         <li>test2.1</li>
-        <li><ul>test2.2
+        <li>
+            <ul>test2.2
             <li>test2.2.1</li>
             <li>test2.2.2</li>
-            </ul></li>
-        </ul>
+            </ul>
+        </li>
+    </ul>
 
 
 
