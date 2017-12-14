@@ -1,4 +1,4 @@
-import React,{PropTypes} from 'react'
+import React from 'react'
 import InsBox from './app/containers/InsBox'
 
 export default class App extends React.Component{

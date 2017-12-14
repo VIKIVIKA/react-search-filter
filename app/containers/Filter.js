@@ -16,7 +16,7 @@ export default class Filter extends Component{
 		return(
 			<div>
 				<input onChange={(e)=>{this.inpVal(e)}} type="text" value={this.state.inputValue} ref="searchArg"/>
-				<button onClick={(e)=>this.props.getTreeData(e, this.refs.searchArg.value)}>abc</button>				
+				<button onClick={(e)=>this.props.getTreeData(e, this.refs.searchArg.value)}>Filter</button>				
 			</div>
 		)
 	}
