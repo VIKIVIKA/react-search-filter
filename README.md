@@ -1,7 +1,66 @@
 # react-search-filter
 # This is a search tree where you can provide any kind of data in data.json file and you have a search filter to retreive data when in need.
 
-Installation procedure.
+
+Sample Tree
+================
+<ul>test1
+    <li>test1.1</li>
+    <li>test1.2</li>
+</ul>
+<ul>test2
+    <li>test2.1</li>
+    <li><ul>test2.2
+        <li>test2.2.1</li>
+        <li>test2.2.2</li>
+        </ul>
+    </li>
+ </ul>
+
+
+Execution
+================ 
+
+Example
+Search criteria 
+===============
+Input:
+    enter "test" in text box and click on search 
+    or
+    enter "test*" in text box and click on search
+
+Output:
+    It will display all like below (because in output test keyword is present every where)
+    <ul>test1
+        <li>test1.1</li>
+        <li>test1.2</li>
+    </ul>
+    <ul>test2
+        <li>test2.1</li>
+        <li>
+            <ul>test2.2
+            <li>test2.2.1</li>
+            <li>test2.2.2</li>
+            </ul>
+        </li>
+    </ul>
+
+Example
+Search criteria2
+===============
+Input:
+    enter "test1" in text box and click on search 
+
+Output:
+    It will display all like below (because in output test keyword is present every where)
+    <ul>test1
+        <li>test1.1</li>
+        <li>test1.2</li>
+    </ul>
+
+
+
+<b>Installation procedure.</b>
 
 1) React and React DOM.
 
