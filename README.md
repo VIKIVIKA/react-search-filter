@@ -60,7 +60,7 @@ Output:
 
 
 
-Installation procedure.
+<b>Installation procedure.</b>
 
 1) React and React DOM.
 
