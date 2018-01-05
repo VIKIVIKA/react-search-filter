@@ -1,0 +1,21 @@
+ import { combineReducers } from 'redux';
+ import treeData from './treeData';
+ import PaymentConfig from './reducerPayment';
+ import ReducerDetail from './reducerdetailspage';
+ import TicketDetail from './reducerticketdetail';
+ import ReducerTravel from './reducertravelpage';
+ import { reducer  as formReducer} from 'redux-form';
+ import ReducerBookCal from './reducerbookingcal';
+ import EnquiryCall from './reducerenquirypage';
+ import ReducerHeaderNav from './reducerheadernav';
+ import VoucherReducer from './reducervoucher';
+ import LoginStatusReducer from './reducerloginstatus';
+ import ReducerEnvStatus from './reducerenvstatus';
+
+ const rootReducer = combineReducers({
+	treeResp:    
+	env:ReducerEnvStatus
+ });
+
+ export default rootReducer;
+
